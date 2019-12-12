@@ -1,0 +1,143 @@
+{{!-- Add new studio button start --}}
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addStudioModal">
+    Add New Studio
+</button>
+
+{{!-- Add new studio button End --}}
+
+{{!-- Add new studio modal start --}}
+<div class="modal fade" id="addStudioModal" tabindex="-1" role="dialog" aria-labelledby="addStudioModalLable"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addStudioModalLable">Add New Studio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="studioName">Studio</label>
+                            <input type="text" class="form-control" id="studioName"
+                                placeholder="Ex : Neelkanth Video Vision">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="ownerName">Owner</label>
+                            <input type="text" class="form-control" id="ownerName" placeholder="Jitendra Panwar">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="cityName">City</label>
+                            <input type="text" class="form-control" id="cityName" placeholder="Bilara">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="contactNumber">Contact Number</label>
+                            <input type="text" class="form-control" id="contactNumber" placeholder="+91-7877613144">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="alternateNumber">Alternate Number</label>
+                            <input type="text" class="form-control" id="alternateNumber" placeholder="+91-7014966646">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="emailAddress">Email</label>
+                            <input type="email" class="form-control" id="emailAddress"
+                                placeholder="neelkanthvideos@gmail.com">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" id="addNewStudio" class="btn btn-primary">Add Studio</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- Add new studio modal end --}}
+
+{{!-- Update Studio Modal Start --}}
+<div class="modal fade" id="updateStudio" tabindex="-1" role="dialog" aria-labelledby="updateStudioLable"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addStudioModalLable">Update Studio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="updateStudioName">Studio</label>
+                            <input type="text" class="form-control" id="updateStudioName">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="updateOwnerName">Owner</label>
+                            <input type="text" class="form-control" id="updateOwnerName">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="updateCityName">City</label>
+                            <input type="text" class="form-control" id="updateCityName">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="updateContactNumber">Contact Number</label>
+                            <input type="text" class="form-control" id="updateContactNumber"
+                                placeholder="+91-7877613144">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="updateAlternateNumber">Alternate Number</label>
+                            <input type="text" class="form-control" id="updateAlternateNumber">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="updateEmailAddress">Email</label>
+                            <input type="email" class="form-control" id="updateEmailAddress">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" id="updateStudioBtn" class="btn btn-primary">Update Studio</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{!-- Update Studio Modal End --}}
+
+{{!-- Table of Studios Start --}}
+
+
+<div class="row">
+    <div class="col-6">
+    </div>
+    <div class="col-6 ">
+        <input type="text" class="form-control" id="studioInput" placeholder="Search...." title="Type to see result">
+    </div>
+</div>
+<table class="table table-hover table-dark mt-1" id="studioSearch">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Studio</th>
+            <th scope="col">Owner</th>
+            <th scope="col">Contact</th>
+            <th scope="col">City</th>
+            <th scope="col">Email</th>
+            <th colspan="2">Action</th>
+        </tr>
+    </thead>
+    <tbody id="tbody">
+    </tbody>
+</table>
+
+
+{{!-- Table Studio End --}}

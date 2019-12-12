@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>{{title}}</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/demo.css">
+    <link rel="stylesheet" type="text/css" href="/light-bootstrap-dashboard.css">
+    <script src="https://kit.fontawesome.com/686b285cd2.js"></script>
+    <link rel="stylesheet" href="/{{style}}">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="/home" class="simple-text">
+                        Neelkanth Videos
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item {{dashboardActive}}">
+                        <a class="nav-link" href="/dashboard">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{projectActive}}">
+                        <a class="nav-link" href="/projects">
+                            <i class="fas fa-thumbtack"></i>
+                            <p>Projects</p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{allProjectActive}}">
+                        <a class="nav-link" href="/allProjects">
+                            <i class="fas fa-list-ul"></i>
+                            <p>All Projects</p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{studioActive}}">
+                        <a class="nav-link" href="/studios">
+                            <i class="fas fa-users"></i>
+                            <p>Studios</p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{orderActive}}">
+                        <a class="nav-link" href="/orders">
+                            <i class="fab fa-opencart"></i>
+                            <p>Orders</p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{accountActive}}">
+                        <a class="nav-link" href="/drawer">
+                            <i class="fas fa-money-check-alt"></i>
+                            <p>Drawer</p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{usersActive}}">
+                        <a class="nav-link" href="/users">
+                            <i class="fas fa-user-alt"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/drawer">
+                                    <span class="no-icon">Drawer</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/logout">
+                                    <span class="no-icon">Log out</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container-fluid">
+                    {{{body}}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="http://pagination.js.org/dist/2.1.5/pagination.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <script src="/{{script}}"></script>
+</body>
+
+</html>

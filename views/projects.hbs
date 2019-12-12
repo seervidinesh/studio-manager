@@ -1,0 +1,208 @@
+<div class="conatiner">
+    <h1>
+        Projects
+    </h1>
+    <h4>
+        Add New Project
+    </h4>
+    {{!-- Add New Project form START --}}
+    <form class="mb-5">
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="projectStudio">Studio</label>
+                <select id="projectStudio" class="form-control select2">
+                </select>
+                <ul class="list-group">
+                </ul>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="partyName">Party</label>
+                <input type="text" class="form-control" id="partyName" placeholder="Party Name">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="jobType">Type</label>
+                <select class="form-control select2">
+                    <option class="jobType">Normal</option>
+                    <option class="jobType">HD</option>
+                    <option class="jobType">HQ</option>
+                    <option class="jobType">4K</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="projectStatus">Status</label>
+                <select class="form-control select2">
+                    <option class="projectStatus">Pending</option>
+                    <option class="projectStatus">Complited</option>
+                    <option class="projectStatus">Delivred</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="totalDvD">DVD's</label>
+                <input type="text" class="form-control" id="totalDvD" placeholder="5">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="projectComplitionDate">Complited On</label>
+                <input type="date" class="form-control" id="projectComplitionDate">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="projectDelivryDate">Delivred On</label>
+                <input type="date" class="form-control" id="projectDelivryDate">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="totalPayment">Total Payment</label>
+                <input type="number" min="0" value="0" max="1000000" class="form-control" id="totalPayment"
+                    placeholder="Total">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="paymentReceived">Payment Received</label>
+                <input type="number" min="0" value="0" max="10000" class="form-control" id="paymentReceived"
+                    placeholder="Payment Received">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="editorsPayment">Editor's Payment</label>
+                <input type="number" min="0" value="100" max="10000" class="form-control" id="editorsPayment"
+                    placeholder="(Per DVD)">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-12">
+                <label for="remark">Remark:</label>
+                <textarea class="form-control" rows="2" id="remark"></textarea>
+            </div>
+        </div>
+        <button type="submit" id="addNewProject" class="btn btn-primary">Add New Project</button>
+    </form>
+    {{!-- Add New Project form END --}}
+
+    <hr>
+
+    {{!-- Search Project By Studios START --}}
+    <div class="input-group mt-5 row">
+        <div class="col-4">
+            <select class="custom-select custom-select-lg" id="inputGroupSelect04">
+            </select>
+        </div>
+        <div class="input-group-append">
+            <button id="inputGroupSelectBtn" class="btn btn-primary" type="button">Show</button>
+        </div>
+        <div class="col-1">
+
+        </div>
+        <div class="col-6">
+            <input type="text" class="form-control" id="projectSearch" placeholder="Search" title="Type to see result">
+        </div>
+    </div>
+    {{!-- Search Project By Studios END --}}
+
+
+    {{!-- Populate Search Project Data in the Table START --}}
+    <table class="table table-hover table-dark mt-1 mb-5 pb-5" id="projectsByStudio">
+        <thead>
+            <tr>
+                <th scope="col">Serial</th>
+                <th scope="col">Studio</th>
+                <th scope="col">Party</th>
+                <th scope="col">Type</th>
+                <th scope="col">Status</th>
+                <th scope="col">DVD's</th>
+                <th scope="col">Total</th>
+                <th scope="col">Received</th>
+                <th scope="col">Due</th>
+                <th colspan="3">Action</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+    {{!-- Populate Search Project Data in the Table END --}}
+
+    {{!-- Update Project Modal START --}}
+    <div class="modal fade" id="updateProject" tabindex="-1" role="dialog" aria-labelledby="updateProjectLable"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateProjectLable">Update Studio</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="updateProjectStudio">Studio</label>
+                                <select id="updateProjectStudio" class="form-control select2">
+                                </select>
+                                <ul class="list-group">
+                                </ul>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="updatePartyName">Party</label>
+                                <input type="text" class="form-control" id="updatePartyName" placeholder="Party Name">
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="updateJobType">Type</label>
+                                <select id="updateJobType" class="form-control select2">
+                                    <option class="updateJobType">Normal</option>
+                                    <option class="updateJobType">HD</option>
+                                    <option class="updateJobType">HQ</option>
+                                    <option class="updateJobType">4K</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-2">
+                                <label for="updateProjectStatus">Status</label>
+                                <select id="updateProjectStatus" class="form-control select2">
+                                    <option class="updateProjectStatus">Pending</option>
+                                    <option class="updateProjectStatus">Complited</option>
+                                    <option class="updateProjectStatus">Delivred</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="updatePotalDvD">DVD's</label>
+                                <input type="text" class="form-control" id="updatePotalDvD" placeholder="5">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="updateProjectComplitionDate">Complited On</label>
+                                <input type="date" class="form-control" id="updateProjectComplitionDate">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="updateProjectDelivryDate">Delivred On</label>
+                                <input type="date" class="form-control" id="updateProjectDelivryDate">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="updateTotalPayment">Total Payment</label>
+                                <input type="number" min="0" max="1000000" class="form-control" id="updateTotalPayment"
+                                    placeholder="Total">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="updatePaymentReceived">Payment Received</label>
+                                <input type="number" min="0" max="10000" class="form-control" id="updatePaymentReceived"
+                                    placeholder="Payment Received">
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="updateRemark">Remark:</label>
+                                <textarea class="form-control" rows="2" id="updateRemark"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" id="updateProjectBtn" class="btn btn-primary">Update Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- Update Project Modal END --}}
+
+</div>

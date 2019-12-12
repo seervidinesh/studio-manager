@@ -1,0 +1,111 @@
+<div class="row">
+  <div class="col-9">
+    <p class="accountHeadding">
+      My Drawer
+    </p>
+  </div>
+  <div class="col-3 pt-3">
+    <button class="btn btn-primary" type="button" data-toggle="collapse" id="openDrawerButton" data-target="#openDrawer"
+      aria-expanded="false" aria-controls="openDrawer">
+      Open Drawer
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Neelkanth Video Vision</h3>
+        <p class="card-text">Click on below button to manage <strong>Central Drawer</strong></p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addBalance"
+          aria-expanded="false" aria-controls="addBalance">
+          Add Balance
+        </button>
+        <a href="#" class="btn btn-primary" data-toggle="collapse" data-target="#splitBalance" aria-expanded="false"
+          aria-controls="splitBalance">Split Balance</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Admin</h3>
+        <p class="card-text">Click on below button to see & manage <strong>Admin Drawer</strong></p>
+        <a href="#" class="btn btn-primary" data-toggle="collapse" data-target="#manageAdmin" aria-expanded="false"
+          aria-controls="manageAdmin">Manage</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Editor</h3>
+        <p class="card-text">Click on below button to see & manage <strong>Editor Drawer</strong></p>
+        <a href="#" class="btn btn-primary" data-toggle="collapse" data-target="#manageEditor" aria-expanded="false"
+          aria-controls="manageEditor">Manage</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="collapse" id="addBalance">
+  <div class="card card-body">
+    <div>
+      <div class="form-row">
+        <div class="col-2">
+          <input type="number" class="form-control" id="addAmount" placeholder="Add Balance...">
+          <label for="addAmount">Add Amount</label>
+        </div>
+        <div class="col-2">
+          <input type="text" class="form-control" id="receivedFrom" placeholder="Balance Received Detail...">
+          <label for="receivedFrom">Received From</label>
+        </div>
+        <div class="col-7">
+          <input type="text" class="form-control" id="balanceDescription" placeholder="Add Description...">
+          <label for="balanceDescription">Add Description</label>
+        </div>
+        <div class="col-1">
+          <button type="submit" id="addToDrawerBtn" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="collapse" id="openDrawer">
+  <div class="card card-body">
+    <div>
+      <div class="form-row">
+        <div class="col-4" id="drawerBalance">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="collapse" id="splitBalance">
+  <div class="card card-body">
+    <div>
+      <div class="form-row">
+        Split Balance
+      </div>
+    </div>
+  </div>
+</div>
+<div class="collapse" id="manageAdmin">
+  <div class="card card-body">
+    <div>
+      <div class="form-row">
+        Manage Admin
+      </div>
+    </div>
+  </div>
+</div>
+<div class="collapse" id="manageEditor">
+  <div class="card card-body">
+    <div>
+      <div class="form-row">
+        Manage Editor
+      </div>
+    </div>
+  </div>
+</div>
