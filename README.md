@@ -6,6 +6,8 @@
 
 ## 3. open `http://localhost:3000/` in the browser.
 
+## to start electron app run command --> npm run electronStart
+
 ### Replace accountSid inside index.js with your Twilio account sid.
 
 ### Replace authToken inside index.js with your Twilio auth token.
