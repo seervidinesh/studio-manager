@@ -2,14 +2,11 @@
   "name": "neelkanth",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "nodemon index.js",
-    "electronStart": "electron .",
-    "package-mac": "electron-packager . Neelkanth --overwrite --platform=darwin --arch=x64 --prune=true --out=release-builds",
-    "package-win": "electron-packager . One Hour Study --overwrite --asar=true --platform=win32 --arch=ia32 --icon=icon.ico --prune=true --out=release-builds"
+    "dev": "nodemon index.js"
   },
   "author": "Dinesh Seervi",
   "license": "ISC",
@@ -22,9 +19,5 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.3.2",
     "twilio": "^3.34.0"
-  },
-  "devDependencies": {
-    "electron": "^7.1.2",
-    "electron-packager": "^14.1.1"
   }
 }

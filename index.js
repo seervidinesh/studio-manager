@@ -19,14 +19,14 @@ var app = express();
 var port = 3000;
 // app locals
 app.locals.accountSid;
-accountSid = "twilio account sid";
+accountSid = process.env.accound_sid;
 app.locals.authToken;
-authToken = "twilio account auth Token";
+authToken = process.env.auth_token;
 app.locals.client;
 client = require("twilio")(accountSid, authToken);
 app.locals.db;
 app.locals.url;
-url = "mongodbURL";
+url = process.env.URL;
 app.locals.ObjectId;
 ObjectId = require("mongodb").ObjectID;
 app.locals.TwillioNumber;
@@ -42,7 +42,7 @@ mongoClient.connect(
   },
   (err, client) => {
     if (err) throw err;
-    db = client.db("MongoDBDataBaseName");
+    db = client.db("StudioManager");
   }
 );
 

@@ -88,16 +88,16 @@ router.put("/updateProject", (req, res) => {
       if (err) throw err;
       res.json("Project Updated");
       client.messages
-          .create({
-              //mediaUrl: [req.body.mediaUrl],
-              from: `whatsapp:${TwillioNumber}`,
-              body: "Project Updated",
-              to: `whatsapp:+91${req.body.phoneNumber}`
-          })
-          .then(message => {
-              console.log(message.sid);
-              res.json(message);
-          });
+        .create({
+          //mediaUrl: [req.body.mediaUrl],
+          from: `whatsapp:${TwillioNumber}`,
+          body: "Project Updated",
+          to: `whatsapp:+91${req.body.phoneNumber}`
+        })
+        .then(message => {
+          console.log(message.sid);
+          res.json(message);
+        });
     }
   );
 });

@@ -22,14 +22,16 @@ router.get("/getProjects", (req, res) => {
 
 router.get("/getProjectByLoockup", (req, res) => {
   db.collection("projects")
-    .aggregate([{
-      $lookup: {
-        from: "studios",
-        localField: "studioId",
-        foreignField: "_id",
-        as: "stdData"
+    .aggregate([
+      {
+        $lookup: {
+          from: "studios",
+          localField: "studioId",
+          foreignField: "_id",
+          as: "stdData"
+        }
       }
-    }])
+    ])
     .toArray((err, result) => {
       if (err) throw err;
       res.json(result);
@@ -38,7 +40,8 @@ router.get("/getProjectByLoockup", (req, res) => {
 
 router.get("/getSingleProjectByIdLookup", (req, res) => {
   db.collection("projects")
-    .aggregate([{
+    .aggregate([
+      {
         $match: {
           _id: ObjectId(req.query.id)
         }
@@ -67,7 +70,8 @@ router.get("/myAllProjectsWithPagination", (req, res) => {
     return (total = totalCount);
   });
   db.collection("projects")
-    .aggregate([{
+    .aggregate([
+      {
         $lookup: {
           from: "studios",
           localField: "studioId",

@@ -108,7 +108,7 @@ $("#addNewProject").on("click", e => {
     }
   });
 });
-$(document).on("click", "#inputGroupSelectBtn", function () {
+$(document).on("click", "#inputGroupSelectBtn", function() {
   var stdData = {
     stdId: $("#inputGroupSelect04 option:selected").attr("value"),
     stdName: $("#inputGroupSelect04 option:selected").text()
@@ -146,10 +146,10 @@ $(document).on("click", "#inputGroupSelectBtn", function () {
                     </tr>`;
         }
       }
-      var Tp = tPayment.reduce(function (acc, val) {
+      var Tp = tPayment.reduce(function(acc, val) {
         return acc + val;
       }, 0);
-      var Rp = rPayment.reduce(function (acc, val) {
+      var Rp = rPayment.reduce(function(acc, val) {
         return acc + val;
       }, 0);
       var Dp = Tp - Rp;
@@ -165,7 +165,7 @@ $(document).on("click", "#inputGroupSelectBtn", function () {
   });
 });
 var projectId;
-$(document).on("click", ".editBtn", function () {
+$(document).on("click", ".editBtn", function() {
   projectId = $(this).attr("value");
   $.ajax({
     url: "/projects/getprojectById?id=" + projectId,
@@ -249,7 +249,7 @@ $("#updateProjectBtn").on("click", () => {
   });
 });
 
-$(document).on("click", ".deleteBtn", function () {
+$(document).on("click", ".deleteBtn", function() {
   if (confirm("Are you sure to delete this project")) {
     var deleteBtnId = $(this).attr("value");
     $.ajax({
@@ -263,23 +263,23 @@ $(document).on("click", ".deleteBtn", function () {
   }
 });
 
-$(document).ready(function () {
-  $("#projectSearch").on("keyup", function () {
+$(document).ready(function() {
+  $("#projectSearch").on("keyup", function() {
     var value = $(this)
       .val()
       .toLowerCase();
-    $("#projectsByStudio tr").filter(function () {
+    $("#projectsByStudio tr").filter(function() {
       $(this).toggle(
         $(this)
-        .text()
-        .toLowerCase()
-        .indexOf(value) > -1
+          .text()
+          .toLowerCase()
+          .indexOf(value) > -1
       );
     });
   });
 });
 
-$(document).on("click", ".generateBill", function () {
+$(document).on("click", ".generateBill", function() {
   alert("generateBill Buttion Clicked");
   var billData = $("#projectsByStudio")
     .find('input[type="checkbox"]:checked')
